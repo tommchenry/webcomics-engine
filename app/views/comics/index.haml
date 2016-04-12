@@ -1,2 +1,22 @@
 %div
-  xD
+  %h2
+    =@comic.title
+  %h3
+    =@comic.post_date
+  =image_tag @comic.img_url
+  %ul
+    %li
+      %a
+        First Comic
+    %li
+      %a
+        Previous Comic 
+    %li
+      %a
+        Random Comic
+    %li
+      %a
+        Next Comic
+    %li
+      %a
+        Last Comic
