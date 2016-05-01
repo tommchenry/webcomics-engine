@@ -38,6 +38,11 @@ gem 'faker'
 # Use haml for views
 gem 'haml-rails'
 
+# Use RSpec for tests
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
