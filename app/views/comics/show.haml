@@ -6,11 +6,11 @@
   =image_tag @comic.img_url
   %ul#comic-navigation
     %li
-      %a
-        First Comic
-    %li
-      %a
-        Previous Comic 
+      =link_to("First Comic",'/comics/1')
+    -if @comic.id != 1
+      %li
+        %a
+          =link_to("Previous Comic","/comics/#{@comic.id-1}")
     %li
       %a
         Random Comic

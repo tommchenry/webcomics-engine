@@ -1,7 +1,9 @@
 class ComicsController < ApplicationController
 
   def index
-    @comic = Comic.all.order(:post_date).last
+    #treat it as an array
+    @comics = Comic.all.order(:post_date)
+    @comic = @comics.last
   end
 
   def show
