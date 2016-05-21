@@ -38,6 +38,8 @@ gem 'faker'
 # Use haml for views
 gem 'haml-rails'
 
+gem 'launchy'
+
 # Use RSpec for tests
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
