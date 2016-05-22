@@ -1,16 +1,23 @@
 %ul#comic-navigation
-  %li
-    %a#first-comic
+  %li#first-comic
+    -if @first_comic
+      =link_to "First Comic", { :action => :show, :id => @first_comic.id }
+    -else
       First Comic
-  %li
-    %a#previous-comic
-      Previous Comic 
-  %li
-    %a#random-comic
-      Random Comic
-  %li
-    %a#next-comic
+  %li#previous-comic
+    -if @previous_comic
+      =link_to "Previous Comic", :action => :show, :id => @previous_comic.id
+    -else
+      Previous Comic
+  %li#random-comic
+    =link_to "Random Comic", :action => :show, :id => @random_comic.id
+  %li#next-comic
+    -if @next_comic
+      =link_to "Next Comic", :action => :show, :id => @next_comic.id
+    -else
       Next Comic
-  %li
-    %a#last-comic
+  %li#last-comic
+    -if @last_comic
+      =link_to "Last Comic", :action => :show, :id => @last_comic.id
+    -else
       Last Comic
