@@ -42,4 +42,22 @@ describe Comic do
       expect(Comic.random_comic(comic)).not_to eq(comic)
     end
   end
+
+  describe '#next_comic' do
+    it 'should return the next comic' do
+      expect(Comic.next_comic(older_comic)).to eq(comic)
+    end
+  end
+
+  describe '#previous_comic' do
+    it 'should return the previous comic' do
+      expect(Comic.previous_comic(comic)).to eq(older_comic)
+    end
+  end
+
+  describe '#first_comic' do
+    it 'should return the first comic' do
+      expect(Comic.first_comic).to eq(older_comic)
+    end
+  end
 end
