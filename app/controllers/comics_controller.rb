@@ -1,9 +1,13 @@
 class ComicsController < ApplicationController
 
   def index
-    #treat it as an array
-    @comics = Comic.all.order(:post_date)
-    @comic = @comics.last
+    @comics = Comic.all.order(post_date: :desc)
+    @comic = @comics.first
+    @previous_comic = @comics.second
+    @random_comc = Comic.random_comic(@comic)
+    @next_comic = nil
+    @first_comic = @comics.last
+    @last_comic = nil
   end
 
   def show
