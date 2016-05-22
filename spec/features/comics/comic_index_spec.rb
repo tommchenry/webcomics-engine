@@ -8,6 +8,7 @@ describe 'comics#index' do
     visit '/'
     expect(page).to have_content comic.title
     expect(page).to have_css('.comic-image')
+    expect(page).to have_xpath("//img[@src=\"#{comic.img_url}\"]")
   end
 
   it 'displays navigation' do

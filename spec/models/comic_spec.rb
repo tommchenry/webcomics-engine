@@ -33,4 +33,13 @@ describe Comic do
     end
   end
 
+  describe '#random_comic' do
+    it 'should return a random comic' do
+      expect(Comic.random_comic(comic)).to be_an_instance_of(Comic)
+    end
+
+    it 'should return a random comic that is not the current_comic' do
+      expect(Comic.random_comic(comic)).not_to eq(comic)
+    end
+  end
 end
