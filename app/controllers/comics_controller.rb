@@ -10,7 +10,7 @@ class ComicsController < ApplicationController
   end
 
   def show
-    @comic = Comic.find(params[:id])
+    @comic = Comic.find_by(url_slug: params[:url_slug])
     @previous_comic = Comic.previous_comic(@comic)
     @random_comic = Comic.random_comic(@comic)
     @next_comic = Comic.next_comic(@comic)
