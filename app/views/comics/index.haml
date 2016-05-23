@@ -1,7 +1,1 @@
-%div#comic
-  %h2.comic-title
-    =@comic.title
-  %h3.comic-date
-    =@comic.post_date
-  =image_tag @comic.img_url, :class => "comic-image"
-  =render "comics/comic_navigation"
+=render :template => "comics/show", :locals => { :comic => @comic}
