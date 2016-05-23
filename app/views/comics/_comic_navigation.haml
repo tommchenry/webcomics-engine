@@ -1,6 +1,6 @@
 %ul#comic-navigation
   %li#first-comic
-    -if @first_comic
+    -if @first_comic && @first_comic != @comic
       =link_to "First Comic", { :action => :show, :id => @first_comic.id }
     -else
       First Comic
@@ -17,7 +17,7 @@
     -else
       Next Comic
   %li#last-comic
-    -if @last_comic
+    -if @last_comic && @last_comic != @comic
       =link_to "Last Comic", :action => :show, :id => @last_comic.id
     -else
       Last Comic
