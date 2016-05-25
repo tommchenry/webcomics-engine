@@ -1,0 +1,30 @@
+body{
+
+}
+
+h1{
+	color:red
+}
+
+#comic-navigation{
+	margin-left: auto;
+	margin-right: auto;
+	width: 80% 
+}
+
+#comic-navigation li{
+	display:inline
+}
+
+#comic-main{
+	margin:auto;
+	width: 75%;
+}
+
+#comic > img{
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+
+
