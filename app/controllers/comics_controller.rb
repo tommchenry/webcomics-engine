@@ -1,12 +1,7 @@
 class ComicsController < ApplicationController
 
   def index
-    @comic = Comic.latest_comic
-    @previous_comic = Comic.previous_comic(@comic)
-    @random_comic = Comic.random_comic(@comic)
-    @next_comic = nil
-    @first_comic = Comic.first_comic
-    @last_comic = nil
+    @comics = Comic.order(post_date: :desc)
   end
 
   def show

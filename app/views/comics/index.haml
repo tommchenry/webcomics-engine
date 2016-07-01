@@ -1,1 +1,6 @@
-=render :template => "comics/show", :locals => { :comic => @comic}
+%ul
+  -@comics.each do |comic|
+    %li
+      =comic.id
+      =link_to "#{comic.title}", :action => :show, :url_slug => comic.url_slug
+      =comic.post_date
