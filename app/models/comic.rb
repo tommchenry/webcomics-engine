@@ -24,11 +24,11 @@ class Comic < ActiveRecord::Base
   end
 
   def self.next_comic(current_comic)
-    Comic.where('post_date > ?', current_comic.post_date).first
+    Comic.where('post_date > ?', current_comic.post_date).order(:post_date).first
   end
 
   def self.previous_comic(current_comic)
-    Comic.where('post_date < ?', current_comic.post_date).last
+    Comic.where('post_date < ?', current_comic.post_date).order(:post_date).last
   end
   
 end
