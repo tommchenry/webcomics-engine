@@ -5,7 +5,7 @@
     -else
       First Comic
   %li#previous-comic
-    -if @previous_comic
+    -if @previous_comic && @first_comic != @comic
       =link_to "Previous Comic", :action => :show, :url_slug => @previous_comic.url_slug
     -else
       Previous Comic
