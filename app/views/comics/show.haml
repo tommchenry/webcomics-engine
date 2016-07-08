@@ -1,9 +1,35 @@
 %div#comic
-  %h2.comic-id
-    =@comic.id 
-  %h2.comic-title
-    =@comic.title
-  %h3.comic-date
-    =@comic.post_date
-  =image_tag @comic.img_url, :class => "comic-image"
-  =render "comics/comic_navigation"
+  %div#comic-wrapper
+    %div#first-comic
+      -if @first_comic && @first_comic != @comic
+        =link_to "First", { :action => :show, :url_slug => @first_comic.url_slug }
+      -else
+        First
+    %div#previous-comic
+      -if @previous_comic && @first_comic != @comic
+        =link_to "Prev", :action => :show, :url_slug => @previous_comic.url_slug
+      -else
+        Prev
+    %div#comic-image
+      -if @next_comic && @next_comic != @comic
+        =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
+        %h2.comic-title
+          =@comic.title
+        %h6.comic-date
+          =@comic.post_date.strftime("Posted on %B %-d, %Y at %I:%M%P")
+      -else
+        =image_tag @comic.img_url, :class => "comic-image"
+        %h2.comic-title
+          =@comic.title
+        %h6.comic-date
+          =@comic.post_date.strftime("Posted on %B %-d, %Y at %I:%M%P")
+    %div#next-comic
+      -if @next_comic && @next_comic != @comic
+        =link_to "Next", :action => :show, :url_slug => @next_comic.url_slug
+      -else
+        Next
+    %div#last-comic
+      -if @last_comic && @last_comic != @comic
+        =link_to "Last", :action => :show, :url_slug => @last_comic.url_slug
+      -else
+        Last
