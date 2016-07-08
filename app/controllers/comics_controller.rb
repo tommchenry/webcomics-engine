@@ -17,6 +17,10 @@ class ComicsController < ApplicationController
     @first_comic = Comic.first_comic
     @last_comic = Comic.latest_comic
   end
+
+  def new
+    @comics = Comic.order(post_date: :desc)
+  end
 end
 
 

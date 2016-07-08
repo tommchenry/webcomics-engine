@@ -1,0 +1,12 @@
+%div.current-comics
+  %h2.comic-title
+    All Comics
+  %table.list
+    -@comics.each do |comic|
+      %tr
+        %td
+          =comic.id
+        %td
+          =comic.title
+        %td
+          =comic.post_date.strftime("%B %-d, %Y at %I:%M %P")
