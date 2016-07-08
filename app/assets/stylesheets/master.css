@@ -6,14 +6,22 @@ h1{
 	color:red
 }
 
+h6{
+
+}
+
+.comic-date{
+	font-style: italic;
+}
+
 #comic-navigation{
-	margin-left: auto;
-	margin-right: auto;
-	width: 80% 
 }
 
 #comic-navigation li{
-	display:inline
+	display:inline;
+	height: 100%;
+	/*padding-left: 5px;*/
+	/*padding-right: 5px;*/
 }
 
 #comic-main{
@@ -21,10 +29,97 @@ h1{
 	width: 75%;
 }
 
-#comic > img{
+.comic-image{
 	margin-left:auto;
 	margin-right:auto;
 	display:block;
 }
 
+#comic > img{
+}
+
+#comic-wrapper{
+	padding: 0;
+	margin: 0;
+}
+
+#first-comic{
+	display: inline-block;
+	width: 5%;
+	height: 100%;
+	padding-top: 50%;
+	padding-bottom: 50%;
+}
+
+#previous-comic{
+	display: inline-block;
+	width: 5%;
+	height: 100%;
+	padding-top: 50%;
+	padding-bottom: 50%;
+}
+
+#comic-image{
+	display: inline-block;
+	width: 76%;
+	vertical-align: top;
+}
+
+#next-comic{
+	display: inline-block;
+	width: 5%;
+	height: 100%;
+	padding-top: 50%;
+	padding-bottom: 50%;
+}
+
+#last-comic{
+	display: inline-block;
+	width: 5%;
+	height: 100%;
+	padding-top: 50%;
+	padding-bottom: 50%;
+}
+
+#comic-footer{
+	background: #fdb60a;
+	height: 250px;
+}
+
+#comic-footer a{
+	color: #fff;
+}
+
+#comic-footer h1{
+	color: #000000;
+	margin:0px;
+	padding:0px;
+	font-size: 2em;
+}
+
+#footer-wrapper p{
+	font-size: .9em;
+
+}
+
+#footer-wrapper{
+	margin-left:10%;
+	margin-right:10%;
+}
+#footer-column1{
+	width: 20%;
+	float: left;
+}
+
+#footer-column2{
+	width: 56%;
+	float: left;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#footer-column3{
+	width: 20%;
+	float: left;
+}
 
