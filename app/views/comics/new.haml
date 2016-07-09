@@ -1,12 +1,25 @@
 %div.current-comics
+  %h2
+    New Comic
+  =form_for @comic do |f|
+    =f.label :title
+    =f.text_field :title
+    =f.label :alt_text
+    =f.text_field :alt_text
+    =f.label :img_url
+    =f.text_field :img_url
+    =f.label :post_date
+    =f.datetime_local_field :post_date
+    =f.submit
+
   %h2.comic-title
     All Comics
   %table.list
     -@comics.each do |comic|
       %tr
         %td
-          =comic.id
+          =comic.id if comic.id
         %td
-          =comic.title
+          =comic.title if comic.title
         %td
-          =comic.post_date.strftime("%B %-d, %Y at %I:%M %P")
+          =comic.post_date.strftime("%B %-d, %Y at %I:%M %P") if comic.post_date
