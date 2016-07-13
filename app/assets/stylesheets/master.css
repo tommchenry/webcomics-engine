@@ -27,12 +27,30 @@ h6{
 #comic-main{
 	margin:auto;
 	width: 75%;
+	min-height: 600px;
 }
 
 .comic-image{
 	margin-left:auto;
 	margin-right:auto;
 	display:block;
+}
+
+.list-all-comics{
+	width:100%;
+}
+
+.list-all-comics a{
+	color: #d68f00;
+}
+
+
+.list-all-comics a:visited {
+	color: #a87000;
+}
+
+.list-all-comics tr:nth-child(even) {
+	background-color: #ffc;
 }
 
 #comic > img{
