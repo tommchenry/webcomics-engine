@@ -1,7 +1,7 @@
 %div.current-comics
   %h2
     New Comic
-  =form_for @comic do |f|
+  =form_for ([:admin,@comic]) do |f|
     =f.label :title
     =f.text_field :title
     =f.label :alt_text
@@ -14,12 +14,16 @@
 
   %h2.comic-title
     All Comics
-  %table.list
+  %table.list-all-comics
     -@comics.each do |comic|
       %tr
         %td
           =comic.id if comic.id
         %td
-          =comic.title if comic.title
+          =link_to comic.title, comic_path(comic.url_slug)
         %td
           =comic.post_date.strftime("%B %-d, %Y at %I:%M %P") if comic.post_date
+        %td
+          =link_to 'Edit', edit_admin_comic_path(comic.id)
+        %td
+          =link_to 'Delete', admin_comic_path(comic.id), method: :delete
