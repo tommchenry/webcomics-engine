@@ -8,15 +8,15 @@ class Comic < ActiveRecord::Base
   end
 
   def self.first_comic
-    self.all.order(:post_date).first
+    self.where(visible: true).order(:post_date).first
   end
 
   def self.latest_comic
-    self.all.order(:post_date).last
+    self.where(visible: true).order(:post_date).last
   end
 
   def self.random_comic(current_comic)
-    random_comic = Comic.all.sample
+    random_comic = Comic.where(visible: true).sample
     until random_comic != current_comic
       random_comic = Comic.random_comic(current_comic)
     end
@@ -24,11 +24,20 @@ class Comic < ActiveRecord::Base
   end
 
   def self.next_comic(current_comic)
-    Comic.where('post_date > ?', current_comic.post_date).order(:post_date).first
+    Comic.
+      where('visible = ?', true).
+      where('post_date > ?', current_comic.post_date).
+      order(:post_date).
+      first
+
   end
 
   def self.previous_comic(current_comic)
-    Comic.where('post_date < ?', current_comic.post_date).order(:post_date).last
+    Comic.
+      where('visible = ?', true).
+      where('post_date < ?', current_comic.post_date).
+      order(:post_date).
+      last
   end
   
 end

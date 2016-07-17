@@ -1,6 +1,6 @@
 10.times do |num|
   title = Faker::Company.buzzword
-  Comic.create!(title: title, img_url:Faker::Placeholdit.image("600x906", "png", 'e9e9e9', '000', title), alt_text: Faker::Hipster.sentence, post_date:Faker::Time.between(num.days.ago, Date.today, :all))
+  Comic.create!(title: title, img_url:Faker::Placeholdit.image("600x906", "png", 'e9e9e9', '000', title), alt_text: Faker::Hipster.sentence, post_date:Faker::Time.between(num.days.ago, Date.today, :all), visible: true)
 end
 
 User.create!(name: "Tom McHenry", email: "tommchenry@gmail.com")
