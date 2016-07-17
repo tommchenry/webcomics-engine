@@ -43,7 +43,7 @@ class Admin::ComicsController < ApplicationController
   private
   
   def comic_params
-    params.require(:comic).permit(:title, :alt_text, :img_url, :post_date)
+    params.require(:comic).permit(:title, :alt_text, :img_url, :visible, :post_date)
   end
 
 end

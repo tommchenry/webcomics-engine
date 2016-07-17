@@ -9,6 +9,8 @@
     =f.text_field :alt_text
     =f.label :img_url
     =f.text_field :img_url
+    =f.label :visible
+    =f.check_box :visible
     =f.label :post_date
     =f.datetime_local_field :post_date
     =f.submit
@@ -24,6 +26,8 @@
           =link_to comic.title, comic_path(comic.url_slug)
         %td
           =comic.post_date.strftime("%B %-d, %Y at %I:%M %P") if comic.post_date
+        %td
+          ="Visible" if comic.visible
         %td
           =link_to 'Edit', edit_admin_comic_path(comic.id)
         %td
