@@ -141,3 +141,13 @@ h6{
 	float: left;
 }
 
+ul.admin-nav {
+	padding: 0px;
+	margin: 0px;
+}
+
+.admin-nav li{
+	list-style-type: none;
+	padding-right: 8px;
+	float:left;
+}
