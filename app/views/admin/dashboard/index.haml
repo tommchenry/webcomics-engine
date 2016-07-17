@@ -1,4 +1,7 @@
-Welcome home, 
-=@current_user.name
-!
-=link_to "Manage Comics", admin_comics_path
+-#%div.admin-info
+  -#Welcome home, #{@current_user.name}!
+-#%ul.admin-nav
+  -#%li
+    -#=link_to "Manage Comics", admin_comics_path
+    -#= render "admin/comics/admin_navigation"
+=render :template => "admin/comics/index"
