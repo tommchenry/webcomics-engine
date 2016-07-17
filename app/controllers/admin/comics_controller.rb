@@ -1,5 +1,6 @@
 class Admin::ComicsController < ApplicationController
   before_filter :authorize
+  before_filter :publisher
 
   def index
     @comic = Comic.new
