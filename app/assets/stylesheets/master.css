@@ -151,3 +151,13 @@ ul.admin-nav {
 	padding-right: 8px;
 	float:left;
 }
+
+.comic-title {
+	max-width: 600px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+h4.comic-title {
+	color: #AE7400;
+}
