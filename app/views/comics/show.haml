@@ -13,16 +13,11 @@
     %div#comic-image
       -if @next_comic && @next_comic != @comic
         =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
-        %h2.comic-title
-          =@comic.title
-        %h6.comic-date
-          =@comic.post_date.strftime("Posted on %B %-d, %Y at %I:%M%P")
       -else
         =image_tag @comic.img_url, :class => "comic-image"
-        %h2.comic-title
-          =@comic.title
-        %h6.comic-date
-          =@comic.post_date.strftime("Posted on %B %-d, %Y at %I:%M%P")
+      %h4.comic-title
+        =@comic.title
+        =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
     %div#next-comic
       -if @next_comic && @next_comic != @comic
         =link_to "Next", :action => :show, :url_slug => @next_comic.url_slug
