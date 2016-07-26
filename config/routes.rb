@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'comics#index'
-  resources :comics, only: [:show, :index], param: :url_slug
+  resources :comics, only: [:show, :index], param: :url_slug, path: "comic"
 
   namespace :admin do
     get '', to: 'dashboard#index', as: '/'
