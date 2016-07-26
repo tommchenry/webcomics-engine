@@ -56,47 +56,99 @@ h6{
 #comic > img{
 }
 
-#comic-wrapper{
-	padding: 0;
-	margin: 0;
+#comic-and-nav-wrapper{
+	display: flex;
+	flex-flow: row || nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: space-between;
+}
+
+#first-comic a{
+	text-decoration:none;
+	color: #FFF;
+}
+
+#first-link:hover{
+	color: #ff00a3;
+	background-color: #ff00a3;
 }
 
 #first-comic{
-	display: inline-block;
+	color: #FFF;
 	width: 5%;
+}
+
+#first-link {
+	background: #FFF url("http://www.noncanon.com/2010/newdesign/comiccms/img/firstarrow.gif") no-repeat center;
+	min-height: 600px;
 	height: 100%;
-	padding-top: 50%;
-	padding-bottom: 50%;
+}
+
+#previous-comic a{
+	text-decoration:none;
+	color: #FFF;
 }
 
 #previous-comic{
-	display: inline-block;
-	width: 5%;
+	color: #FFF;
+	width: 10%;
+}
+
+#previous-link:hover{
+	color: #42ff00;
+	background-color: #42ff00;
+}
+
+#previous-link {
+	background: #FFF url("http://www.noncanon.com/2010/newdesign/comiccms/img/prevarrow.gif") no-repeat center;
+	min-height: 600px;
 	height: 100%;
-	padding-top: 50%;
-	padding-bottom: 50%;
 }
 
 #comic-image{
-	display: inline-block;
-	width: 76%;
-	vertical-align: top;
 }
 
 #next-comic{
-	display: inline-block;
-	width: 5%;
+	color: #FFF;
+	width: 10%;
+}
+
+#next-link:hover{
+	color: #f0ff00;
+	background-color: #f0ff00;
+}
+
+#next-comic a{
+	text-decoration: none;
+	color: #FFF;
+}
+
+#next-link {
+	background: #FFF url("http://www.noncanon.com/2010/newdesign/comiccms/img/nextarrow.gif") no-repeat center;
+	min-height: 600px;
 	height: 100%;
-	padding-top: 50%;
-	padding-bottom: 50%;
 }
 
 #last-comic{
-	display: inline-block;
+	color: #FFF;
 	width: 5%;
+}
+
+#last-comic a{
+	text-decoration:none;
+	color: #FFF;
+}
+
+#last-link:hover{
+	color: #00fcff;
+	background-color: #00fcff;
+}
+
+#last-link {
+	background: #FFF url("http://www.noncanon.com/2010/newdesign/comiccms/img/lastarrow.gif") no-repeat center;
+	min-height: 600px;
 	height: 100%;
-	padding-top: 50%;
-	padding-bottom: 50%;
 }
 
 #comic-footer{
@@ -161,3 +213,7 @@ ul.admin-nav {
 h4.comic-title {
 	color: #AE7400;
 }
+
+
+
+

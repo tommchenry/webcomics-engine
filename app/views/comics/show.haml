@@ -1,30 +1,37 @@
-%div#comic
-  %div#comic-wrapper
-    %div#first-comic
-      -if @first_comic && @first_comic != @comic
-        =link_to "First", { :action => :show, :url_slug => @first_comic.url_slug }
-      -else
-        First
-    %div#previous-comic
-      -if @previous_comic && @first_comic != @comic
-        =link_to "Prev", :action => :show, :url_slug => @previous_comic.url_slug
-      -else
-        Prev
-    %div#comic-image
-      -if @next_comic && @next_comic != @comic
-        =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
-      -else
-        =image_tag @comic.img_url, :class => "comic-image"
-      %h4.comic-title
-        =@comic.title
-        =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
-    %div#next-comic
-      -if @next_comic && @next_comic != @comic
-        =link_to "Next", :action => :show, :url_slug => @next_comic.url_slug
-      -else
-        Next
-    %div#last-comic
-      -if @last_comic && @last_comic != @comic
-        =link_to "Last", :action => :show, :url_slug => @last_comic.url_slug
-      -else
-        Last
+%div#comic-and-nav-wrapper
+  %div#first-comic
+    -if @first_comic && @first_comic != @comic
+      %a{:href => "/comics/" + @first_comic.url_slug}
+        %div#first-link
+          First
+    -else
+      First
+  %div#previous-comic
+    -if @previous_comic && @first_comic != @comic
+      %a{:href => "/comics/" + @previous_comic.url_slug}
+        %div#previous-link
+          Previous 
+    -else
+      Previous
+  %div#comic-image
+    -if @next_comic && @next_comic != @comic
+      =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
+    -else
+      =image_tag @comic.img_url, :class => "comic-image"
+    %h4.comic-title
+      =@comic.title
+      =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
+  %div#next-comic
+    -if @next_comic && @next_comic != @comic
+      %a{:href => "/comics/" + @next_comic.url_slug}
+        %div#next-link
+          Next
+    -else
+      Next
+  %div#last-comic
+    -if @last_comic && @last_comic != @comic
+      %a{:href => "/comics/" + @last_comic.url_slug}
+        %div#last-link
+          Last 
+    -else
+      Last
