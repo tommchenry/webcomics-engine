@@ -58,7 +58,7 @@ h6{
 
 #comic-and-nav-wrapper{
 	display: flex;
-	flex-flow: row || nowrap;
+	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: stretch;
 	align-content: space-between;
