@@ -1,14 +1,14 @@
 %div#comic-and-nav-wrapper
   %div#first-comic
     -if @first_comic && @first_comic != @comic
-      %a{:href => "/comics/" + @first_comic.url_slug}
+      %a{:href => "/comic/" + @first_comic.url_slug}
         %div#first-link
           First
     -else
       First
   %div#previous-comic
     -if @previous_comic && @first_comic != @comic
-      %a{:href => "/comics/" + @previous_comic.url_slug}
+      %a{:href => "/comic/" + @previous_comic.url_slug}
         %div#previous-link
           Previous 
     -else
@@ -23,14 +23,14 @@
       =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
   %div#next-comic
     -if @next_comic && @next_comic != @comic
-      %a{:href => "/comics/" + @next_comic.url_slug}
+      %a{:href => "/comic/" + @next_comic.url_slug}
         %div#next-link
           Next
     -else
       Next
   %div#last-comic
     -if @last_comic && @last_comic != @comic
-      %a{:href => "/comics/" + @last_comic.url_slug}
+      %a{:href => "/comic/" + @last_comic.url_slug}
         %div#last-link
           Last 
     -else
