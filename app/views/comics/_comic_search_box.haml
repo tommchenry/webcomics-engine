@@ -1,0 +1,5 @@
+%div#search-form
+  =content_for :search do
+    =search_form_for @search, url: search_comics_path, method: :post do |f|
+      =f.text_field :title_cont, class: "", placeholder: "Search"
+      =f.submit "Search", class: ""

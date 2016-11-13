@@ -1,3 +1,9 @@
+= render "comic_search_box"
+%ul
+-if @comics 
+  -@comics.each do |comic| 
+    %li
+    =link_to comic.title, comic_path(comic.url_slug)
 %div#comic-and-nav-wrapper
   %div#first-comic
     -if @first_comic && @first_comic != @comic

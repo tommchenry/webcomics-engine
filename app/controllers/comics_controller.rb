@@ -1,6 +1,8 @@
 class ComicsController < ApplicationController
 
   def index
+    @search = Comic.search(params[:q])
+    @comics = @search.result
     @comic = Comic.latest_comic
     @previous_comic = Comic.previous_comic(@comic)
     @random_comic = Comic.random_comic(@comic)
@@ -10,6 +12,8 @@ class ComicsController < ApplicationController
   end
 
   def show
+    @search = Comic.search(params[:q])
+    @comics = @search.result
     @comic = Comic.find_by(url_slug: params[:url_slug])
     @previous_comic = Comic.previous_comic(@comic)
     @random_comic = Comic.random_comic(@comic)
