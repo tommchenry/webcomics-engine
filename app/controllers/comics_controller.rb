@@ -2,13 +2,16 @@ class ComicsController < ApplicationController
 
   def index
     @search = Comic.search(params[:q])
-    @comics = @search.result
-    @comic = Comic.latest_comic
-    @previous_comic = Comic.previous_comic(@comic)
-    @random_comic = Comic.random_comic(@comic)
-    @next_comic = Comic.next_comic(@comic)
-    @first_comic = Comic.first_comic
-    @last_comic = Comic.latest_comic
+    if params[:q].nil?
+      @comic = Comic.latest_comic
+      @previous_comic = Comic.previous_comic(@comic)
+      @random_comic = Comic.random_comic(@comic)
+      @next_comic = Comic.next_comic(@comic)
+      @first_comic = Comic.first_comic
+      @last_comic = Comic.latest_comic
+    else
+      @comics = @search.result
+    end
   end
 
   def show
@@ -41,8 +44,14 @@ class ComicsController < ApplicationController
     render :action => :new
   end
 
+  def search_results
+    @search = Comic.search(params[:q])
+    @comics = @search.result
+    render `results`
+  end
+
   private
-  
+
   def comic_params
     params.require(:comic).permit(:title, :alt_text, :img_url, :post_date)
   end

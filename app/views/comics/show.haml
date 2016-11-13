@@ -1,43 +1,44 @@
 = render "comic_search_box"
 %ul
--if @comics 
-  -@comics.each do |comic| 
+-unless @comic
+  -@comics.each do |comic|
     %li
     =link_to comic.title, comic_path(comic.url_slug)
-%div#comic-and-nav-wrapper
-  %div#first-comic
-    -if @first_comic && @first_comic != @comic
-      %a{:href => "/comic/" + @first_comic.url_slug}
-        %div#first-link
-          First
-    -else
-      First
-  %div#previous-comic
-    -if @previous_comic && @first_comic != @comic
-      %a{:href => "/comic/" + @previous_comic.url_slug}
-        %div#previous-link
-          Previous 
-    -else
-      Previous
-  %div#comic-image
-    -if @next_comic && @next_comic != @comic
-      =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
-    -else
-      =image_tag @comic.img_url, :class => "comic-image"
-    %h4.comic-title
-      =@comic.title
-      =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
-  %div#next-comic
-    -if @next_comic && @next_comic != @comic
-      %a{:href => "/comic/" + @next_comic.url_slug}
-        %div#next-link
-          Next
-    -else
-      Next
-  %div#last-comic
-    -if @last_comic && @last_comic != @comic
-      %a{:href => "/comic/" + @last_comic.url_slug}
-        %div#last-link
-          Last 
-    -else
-      Last
+-else
+  %div#comic-and-nav-wrapper
+    %div#first-comic
+      -if @first_comic && @first_comic != @comic
+        %a{:href => "/comic/" + @first_comic.url_slug}
+          %div#first-link
+            First
+      -else
+        First
+    %div#previous-comic
+      -if @previous_comic && @first_comic != @comic
+        %a{:href => "/comic/" + @previous_comic.url_slug}
+          %div#previous-link
+            Previous
+      -else
+        Previous
+    %div#comic-image
+      -if @next_comic && @next_comic != @comic
+        =link_to(image_tag(@comic.img_url, :class => "comic-image"), :action => :show, :url_slug => @next_comic.url_slug)
+      -else
+        =image_tag @comic.img_url, :class => "comic-image"
+      %h4.comic-title
+        =@comic.title
+        =@comic.post_date.strftime(" - posted on %B %-d, %Y at %I:%M%P")
+    %div#next-comic
+      -if @next_comic && @next_comic != @comic
+        %a{:href => "/comic/" + @next_comic.url_slug}
+          %div#next-link
+            Next
+      -else
+        Next
+    %div#last-comic
+      -if @last_comic && @last_comic != @comic
+        %a{:href => "/comic/" + @last_comic.url_slug}
+          %div#last-link
+            Last
+      -else
+        Last

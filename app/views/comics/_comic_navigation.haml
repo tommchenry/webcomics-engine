@@ -1,23 +1,24 @@
-%ul#comic-navigation
-  %li#first-comic
-    -if @first_comic && @first_comic != @comic
-      =link_to "First Comic", { :action => :show, :url_slug => @first_comic.url_slug }
-    -else
-      First Comic
-  %li#previous-comic
-    -if @previous_comic && @first_comic != @comic
-      =link_to "Previous Comic", :action => :show, :url_slug => @previous_comic.url_slug
-    -else
-      Previous Comic
-  %li#random-comic
-    =link_to "Random Comic", :action => :show, :url_slug => @random_comic.url_slug
-  %li#next-comic
-    -if @next_comic && @next_comic != @comic
-      =link_to "Next Comic", :action => :show, :url_slug => @next_comic.url_slug
-    -else
-      Next Comic
-  %li#last-comic
-    -if @last_comic && @last_comic != @comic
-      =link_to "Last Comic", :action => :show, :url_slug => @last_comic.url_slug
-    -else
-      Last Comic
+-if @comic
+  %ul#comic-navigation
+    %li#first-comic
+      -if @first_comic && @first_comic != @comic
+        =link_to "First Comic", { :action => :show, :url_slug => @first_comic.url_slug }
+      -else
+        First Comic
+    %li#previous-comic
+      -if @previous_comic && @first_comic != @comic
+        =link_to "Previous Comic", :action => :show, :url_slug => @previous_comic.url_slug
+      -else
+        Previous Comic
+    %li#random-comic
+      =link_to "Random Comic", :action => :show, :url_slug => @random_comic.url_slug
+    %li#next-comic
+      -if @next_comic && @next_comic != @comic
+        =link_to "Next Comic", :action => :show, :url_slug => @next_comic.url_slug
+      -else
+        Next Comic
+    %li#last-comic
+      -if @last_comic && @last_comic != @comic
+        =link_to "Last Comic", :action => :show, :url_slug => @last_comic.url_slug
+      -else
+        Last Comic
