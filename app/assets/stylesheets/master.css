@@ -258,3 +258,9 @@ a.orange-link{
 .padding-bottom-10{
   padding-bottom: 10px;
 }
+
+#login-form{
+  min-height: 400px;
+  width: 50%;
+  margin: auto;
+}
