@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   
   def new
-
+    @search = Comic.search(params[:q])
   end
 
   def create
