@@ -43,6 +43,8 @@ gem 'haml-rails'
 
 gem 'launchy'
 
+gem 'ransack'
+
 # Use RSpec for tests
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'

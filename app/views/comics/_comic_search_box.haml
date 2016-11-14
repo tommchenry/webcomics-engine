@@ -1,0 +1,4 @@
+=content_for :search do
+  =search_form_for @search, :html => {class: 'orange-bg', id: 'comic_search'}, url: search_comics_path, method: :post do |f|
+    =f.text_field :title_cont, class: "search-field", placeholder: "Search"
+    =f.submit "Search", class: "btn"

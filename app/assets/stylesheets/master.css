@@ -152,7 +152,6 @@ h6{
 }
 
 #comic-footer{
-	background: #fdb60a;
 	height: 250px;
 }
 
@@ -214,6 +213,37 @@ h4.comic-title {
 	color: #AE7400;
 }
 
+ul#search-results{
+  list-style-type: none;
+}
 
+#search-result-form{
+  width: 75%;
+  margin: auto;
+}
 
+li.single-result{
+  list-style-type: none;
+}
 
+a.orange-link{
+	color: #d68f00;
+}
+
+.orange-bg{
+	background: #fdb60a;
+}
+
+#comic_search{
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 4%;
+  padding-left: 80%;
+  padding-top: .25%;
+}
+
+#logo-header{
+  padding-top: 4%;
+  padding-left: 10%;
+}
