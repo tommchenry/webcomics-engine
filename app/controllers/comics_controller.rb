@@ -11,7 +11,7 @@ class ComicsController < ApplicationController
       @last_comic = Comic.latest_comic
     else
       @comics = @search.result
-      @searched_for = params[:q][:title_cont]
+      @searched_for = params[:q][:title_or_keywords_cont]
     end
   end
 
