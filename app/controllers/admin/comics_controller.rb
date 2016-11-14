@@ -3,6 +3,7 @@ class Admin::ComicsController < ApplicationController
   before_filter :publisher
 
   def index
+    @search = Comic.search(params[:q])
     @comic = Comic.new
     @comics = Comic.order(post_date: :desc)
   end
@@ -25,10 +26,12 @@ class Admin::ComicsController < ApplicationController
   end
 
   def edit
+    @search = Comic.search(params[:q])
     @comic = Comic.find(params[:id])
   end
 
   def update
+    @search = Comic.search(params[:q])
     @comic = Comic.find(params[:id])
     @comic.update_attributes(comic_params)
     flash[:success] = "Comic updated!"
@@ -44,7 +47,7 @@ class Admin::ComicsController < ApplicationController
   private
   
   def comic_params
-    params.require(:comic).permit(:title, :alt_text, :img_url, :visible, :post_date)
+    params.require(:comic).permit(:title, :alt_text, :img_url, :visible, :post_date, :keywords)
   end
 
 end
