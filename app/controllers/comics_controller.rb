@@ -11,6 +11,7 @@ class ComicsController < ApplicationController
       @last_comic = Comic.latest_comic
     else
       @comics = @search.result
+      @searched_for = params[:q][:title_cont]
     end
   end
 
@@ -42,12 +43,6 @@ class ComicsController < ApplicationController
     end
     @comics = Comic.order(post_date: :desc)
     render :action => :new
-  end
-
-  def search_results
-    @search = Comic.search(params[:q])
-    @comics = @search.result
-    render `results`
   end
 
   private
