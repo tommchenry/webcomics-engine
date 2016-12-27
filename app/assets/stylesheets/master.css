@@ -216,6 +216,12 @@ h4.comic-title {
 	/*color: #AE7400;*/
 }
 
+h5.comic-date{
+  text-align: center;
+  font-weight: normal;
+	/*color: #AE7400;*/
+}
+
 ul#search-results{
   list-style-type: none;
 }
@@ -249,6 +255,30 @@ a.orange-link{
 #logo-header{
   padding-top: 4%;
   padding-left: 10%;
+}
+
+.margin-top-0{
+  margin-top: 0;
+}
+
+.margin-bottom-0{
+  margin-bottom: 0;
+}
+
+.padding-top-0{
+  padding-top: 0px;
+}
+
+.padding-bottom-0{
+  padding-bottom: 0px;
+}
+
+.padding-top-5{
+  padding-top: 5px;
+}
+
+.padding-bottom-5{
+  padding-bottom: 5px;
 }
 
 .padding-top-10{
