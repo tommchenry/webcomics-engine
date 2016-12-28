@@ -3,7 +3,7 @@ require 'net/http'
 
 ROOT_URL = "http://www.noncanon.com/comics/"
 
-task :dropbox_import do
+task :dropbox_import => :environment do
   tmp_file_name = "#{Rails.root}/tmp/db_comics.csv"
   Net::HTTP.start("noncanon.com") do |http|
     resp = http.get("/db_comics.csv")
