@@ -59,8 +59,7 @@ task :noncanon_bulk_rename => :environment do
     extension = File.exists?("#{tmp_source_dir}#{counter}.gif") ? ".gif" : ".jpg"
     source_file = counter.to_s + extension
     destination_file = file_name + extension
-    puts destination_file
-    #puts "Rename #{source_file} to #{destination_file}"
-    #File.rename(tmp_source_dir + source_file, tmp_source_dir + destination_file)
+    puts "Rename #{source_file} to #{destination_file}"
+    File.rename(tmp_source_dir + source_file, tmp_source_dir + destination_file)
   end
 end
