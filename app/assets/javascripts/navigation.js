@@ -14,4 +14,11 @@ $(document).ready(function () {
 		}
 	});
 });
-
+//random
+$(document).ready(function () {
+	$(document).on("keyup", function (event) {
+		if (event.which == 191) {
+			$("#random-link")[0].click();
+		}
+	});
+});
