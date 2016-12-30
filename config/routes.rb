@@ -17,6 +17,11 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+
+  # this route is for the RSS feed
+  get 'feed.rss', to: 'feeds#rss', :format => 'rss'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
