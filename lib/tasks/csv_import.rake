@@ -1,7 +1,30 @@
 require 'csv'
 require 'net/http'
 
-ROOT_URL = "http://www.noncanon.com/comics/"
+ROOT_URL = "noncanon.online"
+FILENAME = "ls_comics.csv"
+
+namespace :import do
+  desc "imports comics from a basic ls command"
+  task :basic_import => :environment do 
+    tmp_file_name = "#{Rails.root}/tmp/comics.csv"
+    Net::HTTP.start("noncanon.online") do |http|
+      resp = http.get("/csv/ls_comics.csv")
+      open(tmp_file_name, "wb") do |file|
+        file.write(resp.body)
+      end
+    end
+    puts "File Downloaded."
+    CSV.foreach(tmp_file_name) do |csv|
+      img_url = "http://www.noncanon.online/comics/" + csv[0]
+      date_regex = /\d\d\d\d-\d\d-\d\d\s/
+      title = File.basename(csv[0], ".png").gsub(date_regex, "")
+      post_date = DateTime.parse(csv[0][date_regex])
+      Comic.create!(title: title, img_url: img_url, post_date: post_date, visible: true)
+    end
+    puts "File Imported."
+  end
+end
 
 task :dropbox_import => :environment do
   tmp_file_name = "#{Rails.root}/tmp/db_comics.csv"
