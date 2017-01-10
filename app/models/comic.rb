@@ -1,5 +1,9 @@
 class Comic < ActiveRecord::Base
+<<<<<<< HEAD
   before_validation :slug_url, :add_root_url, :ensure_post_date
+=======
+  before_validation :slug_url, :add_root_url
+>>>>>>> Add root url.
 
   ROOT_URL = "http://www.noncanon.online/comics/"
 
