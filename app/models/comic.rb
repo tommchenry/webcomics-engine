@@ -1,10 +1,16 @@
 class Comic < ActiveRecord::Base
-  before_validation :slug_url
+  before_validation :slug_url, :add_root_url
+
+  ROOT_URL = "http://www.noncanon.online/comics/"
 
   def slug_url
     unless self.url_slug
       self.url_slug = self.title.parameterize
     end
+  end
+
+  def add_root_url
+    self.img_url = File.join(ROOT_URL, self.img_url)
   end
 
   def self.first_comic
