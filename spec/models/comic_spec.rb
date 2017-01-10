@@ -11,7 +11,9 @@ describe Comic do
     end
 
     it 'should return an image url' do
-      expect(comic.img_url).to eq("https://placehold.it/300x300.png/000")
+      comic.img_url = "test.png"
+      comic.save
+      expect(comic.img_url).to eq(Comic::ROOT_URL + "test.png")
     end
 
     it 'should return an alt text' do
