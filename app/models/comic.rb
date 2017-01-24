@@ -1,9 +1,5 @@
 class Comic < ActiveRecord::Base
-<<<<<<< HEAD
   before_validation :slug_url, :add_root_url, :ensure_post_date
-=======
-  before_validation :slug_url, :add_root_url
->>>>>>> Add root url.
 
   ROOT_URL = "http://www.noncanon.online/comics/"
 
@@ -14,7 +10,9 @@ class Comic < ActiveRecord::Base
   end
 
   def add_root_url
-    self.img_url = File.join(ROOT_URL, self.img_url)
+    unless self.img_url =~ /^(http|https):\/\//
+      self.img_url = File.join(ROOT_URL, self.img_url)
+    end
   end
 
   def ensure_post_date
