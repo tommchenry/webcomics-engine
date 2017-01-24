@@ -10,7 +10,9 @@ class Comic < ActiveRecord::Base
   end
 
   def add_root_url
-    self.img_url = File.join(ROOT_URL, self.img_url)
+    unless self.img_url =~ /^(http|https):\/\//
+      self.img_url = File.join(ROOT_URL, self.img_url)
+    end
   end
 
   def ensure_post_date
