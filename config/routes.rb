@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/HorseMaster.html' => redirect('http://www.noncanon.online/games/HorseMaster.html')
+  get '/HorseMaster.html' => redirect('https://s3.amazonaws.com/noncanon-comics/games/HorseMaster.html')
 
   # this route is for the RSS feed
   get 'feed.rss', to: 'feeds#rss', :format => 'rss'
