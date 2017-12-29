@@ -82,7 +82,7 @@ h6{
 }
 
 #first-link {
-	background: #FFF url("http://www.noncanon.online/nav/firstarrow.gif") no-repeat center;
+	background: #FFF url("https://s3.amazonaws.com/noncanon-comics/img/firstarrow.gif") no-repeat center;
 	min-height: 600px;
 	height: 100%;
 }
@@ -103,7 +103,7 @@ h6{
 }
 
 #previous-link {
-	background: #FFF url("http://www.noncanon.online/nav/prevarrow.gif") no-repeat center;
+	background: #FFF url("https://s3.amazonaws.com/noncanon-comics/img/prevarrow.gif") no-repeat center;
 	min-height: 600px;
 	height: 100%;
 }
@@ -127,7 +127,7 @@ h6{
 }
 
 #next-link {
-	background: #FFF url("http://www.noncanon.online/nav/nextarrow.gif") no-repeat center;
+	background: #FFF url("https://s3.amazonaws.com/noncanon-comics/img/nextarrow.gif") no-repeat center;
 	min-height: 600px;
 	height: 100%;
 }
@@ -148,7 +148,7 @@ h6{
 }
 
 #last-link {
-	background: #FFF url("http://www.noncanon.online/nav/lastarrow.gif") no-repeat center;
+	background: #FFF url("https://s3.amazonaws.com/noncanon-comics/img/lastarrow.gif") no-repeat center;
 	min-height: 600px;
 	height: 100%;
 }
