@@ -1,5 +1,5 @@
-ORIGINAL_URL = "http://www.noncanon.com/"
-NEW_URL = "http://www.noncanon.online/"
+ORIGINAL_URL = "http://www.noncanon.online/"
+NEW_URL = "https://s3.amazonaws.com/noncanon-comics/"
 
 task :url_update => :environment do
   Comic.all.each do |comic|
