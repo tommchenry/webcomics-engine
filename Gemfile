@@ -44,6 +44,9 @@ gem 'haml-rails'
 gem 'launchy'
 
 gem 'ransack'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use RSpec for tests
 group :development, :test do
@@ -53,6 +56,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do

@@ -2,13 +2,13 @@
 %div.current-comics
   %h2
     New Comic
-  =form_for ([:admin,@comic]) do |f|
+  =form_for([:admin,@comic]) do |f|
     =f.label :title
     =f.text_field :title
     =f.label :alt_text
     =f.text_field :alt_text
-    =f.label :img_url
-    =f.text_field :img_url
+    =f.label :image
+    =f.file_field :image
     =f.label :visible
     =f.check_box :visible
     =f.label :post_date
