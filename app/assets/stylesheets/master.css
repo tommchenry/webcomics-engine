@@ -46,6 +46,14 @@ h6{
 	color: #d68f00;
 }
 
+.first-column{
+  padding-left: 2%;
+}
+
+.last-column{
+  padding-right: 2%;
+}
+
 
 .list-all-comics a:visited {
 	color: #a87000;
@@ -233,6 +241,7 @@ ul#search-results{
 
 li.single-result{
   list-style-type: none;
+  padding-bottom: 1em;
 }
 
 a.orange-link{
@@ -250,6 +259,12 @@ a.orange-link{
   height: 4%;
   padding-left: 80%;
   padding-top: .25%;
+}
+
+.search-link{
+  vertical-align: top;
+  padding-top: 8%;
+  display: inline-block;
 }
 
 #logo-header{

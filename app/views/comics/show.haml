@@ -7,7 +7,8 @@
           %ul#search-results
             -@comics.each do |comic|
               %li.single-result
-                =link_to comic.title, comic_path(comic.url_slug), class: "orange-link"
+                =link_to image_tag(comic.image.url(:thumb)), comic_path(comic.url_slug)
+                =link_to comic.title, comic_path(comic.url_slug), class: "orange-link search-link"
         -else
           ="Sorry, No Comics Found For \"#{@searched_for}\""
   -else
@@ -34,9 +35,9 @@
         %h6.random-link.padding-top-0.padding-bottom-10.margin-top-0.margin-bottom-0
           =link_to "Random Comic", { :action => :show, :url_slug => @random_comic.url_slug }, id: "random-link", class: "orange-link"
         -if @next_comic && @next_comic != @comic
-          =link_to(image_tag(@comic.img_url, :class => "comic-image", alt: @comic.alt_text, title: @comic.alt_text), :action => :show, :url_slug => @next_comic.url_slug)
+          =link_to(image_tag(@comic.image.url, :class => "comic-image", alt: @comic.alt_text, title: @comic.alt_text), :action => :show, :url_slug => @next_comic.url_slug)
         -else
-          =image_tag @comic.img_url, :class => "comic-image", alt: @comic.alt_text, title: @comic.alt_text
+          =image_tag @comic.image.url, :class => "comic-image", alt: @comic.alt_text, title: @comic.alt_text
       %div#next-comic
         -if @next_comic && @next_comic != @comic
           %a{:href => "/comic/" + @next_comic.url_slug}

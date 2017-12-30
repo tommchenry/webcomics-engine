@@ -6,8 +6,8 @@
   =f.text_field :title
   =f.label :alt_text
   =f.text_field :alt_text
-  =f.label :img_url
-  =f.text_field :img_url
+  =f.label :image
+  =f.file_field :image
   =f.label :visible
   =f.check_box :visible
   =f.label :post_date
@@ -15,5 +15,5 @@
   =f.label :keywords
   =f.text_field :keywords
   =f.submit
-  
-=image_tag(@comic.img_url, :class => "comic-image")
+
+=image_tag(@comic.image.url, :class => "comic-image")

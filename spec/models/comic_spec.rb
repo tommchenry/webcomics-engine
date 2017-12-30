@@ -10,12 +10,6 @@ describe Comic do
       expect(comic.title).to eq("Test Comic")
     end
 
-    it 'should return an image url' do
-      comic.img_url = "test.png"
-      comic.save
-      expect(comic.img_url).to eq(Comic::ROOT_URL + "test.png")
-    end
-
     it 'should return an alt text' do
       expect(comic.alt_text).to eq("alt text")
     end
