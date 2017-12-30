@@ -1,28 +1,9 @@
-# == Schema Information
-#
-# Table name: comics
-#
-#  id                 :integer          not null, primary key
-#  title              :string
-#  alt_text           :string
-#  created_at         :datetime
-#  updated_at         :datetime
-#  url_slug           :string
-#  post_date          :datetime
-#  visible            :boolean          default(TRUE)
-#  keywords           :string           default("")
-#  image_file_name    :string
-#  image_content_type :string
-#  image_file_size    :integer
-#  image_updated_at   :datetime
-#
-
 require 'rails_helper'
 
 describe Comic do
 
-  let!(:older_comic){Comic.create(title:"Old Comic", img_url:"https://placehold.it/300x300.png/000", alt_text: "I'm older", post_date: "2016-03-12")}
-  let!(:comic){Comic.create(title:"Test Comic", img_url:"https://placehold.it/300x300.png/000", alt_text: "alt text", post_date:"2016-04-12")}
+  let!(:older_comic){Comic.create(title:"Old Comic", image:"https://placehold.it/300x300.png/000", alt_text: "I'm older", post_date: "2016-03-12")}
+  let!(:comic){Comic.create(title:"Test Comic", image:"https://placehold.it/300x300.png/000", alt_text: "alt text", post_date:"2016-04-12")}
 
   describe 'basic model' do
     it 'should return a title' do
