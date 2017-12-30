@@ -27,6 +27,8 @@
         %td
           =link_to comic.title, comic_path(comic.url_slug)
         %td
+          =image_tag(comic.image.url(:thumb))
+        %td
           =comic.post_date.strftime("%B %-d, %Y at %I:%M %P") if comic.post_date
         %td
           ="Visible" if comic.visible

@@ -233,6 +233,7 @@ ul#search-results{
 
 li.single-result{
   list-style-type: none;
+  padding-bottom: 1em;
 }
 
 a.orange-link{
@@ -250,6 +251,12 @@ a.orange-link{
   height: 4%;
   padding-left: 80%;
   padding-top: .25%;
+}
+
+.search-link{
+  vertical-align: top;
+  padding-top: 8%;
+  display: inline-block;
 }
 
 #logo-header{
