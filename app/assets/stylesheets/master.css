@@ -46,6 +46,14 @@ h6{
 	color: #d68f00;
 }
 
+.first-column{
+  padding-left: 2%;
+}
+
+.last-column{
+  padding-right: 2%;
+}
+
 
 .list-all-comics a:visited {
 	color: #a87000;
