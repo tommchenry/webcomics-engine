@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: comics
+#
+#  id                 :integer          not null, primary key
+#  title              :string
+#  alt_text           :string
+#  created_at         :datetime
+#  updated_at         :datetime
+#  url_slug           :string
+#  post_date          :datetime
+#  visible            :boolean          default(TRUE)
+#  keywords           :string           default("")
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#
+
 require 'rails_helper'
 
 describe Comic do
