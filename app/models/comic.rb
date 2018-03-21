@@ -19,6 +19,8 @@
 
 class Comic < ActiveRecord::Base
   before_validation :slug_url, :ensure_post_date
+  validates :title, presence: true
+
   #Paperclip
   has_attached_file :image,
     styles: {
