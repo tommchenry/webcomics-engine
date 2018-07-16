@@ -13,7 +13,7 @@ xml.rss :version => '2.0', 'xmlns:atom' => 'http://www.w3.org/2005/Atom' do
         comic_link = root_url + "comic/" + comic.url_slug
         xml.link comic_link
         xml.description {
-          xml.cdata! "<a href='" + comic_link + "'><img src='" + comic.img_url + "'></a>"
+          xml.cdata! "<a href='" + comic_link + "'><img src='" + comic.image.url + "'></a>"
         }
         xml.pubDate comic.post_date.to_formatted_s(:rfc822)
         xml.guid comic_link
