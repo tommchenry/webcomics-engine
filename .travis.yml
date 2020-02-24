@@ -1,11 +1,14 @@
 language: ruby
 rvm:
-  - 2.3.0
-  - 2.2.4
-bundler_args: --jobs=2
-script:
-  - bundle exec rake db:setup
-  - bundle exec rake spec
-cache: bundler
+ - 2.2
+# uncomment and edit the following line if your project needs to run
+# something other than `rake`:
+# # script: bundle exec rspec spec
+
 services:
   - postgresql
+
+before_script:
+  - psql -c 'create database webcomics_test;' -U postgres
+
+dist: trusty
