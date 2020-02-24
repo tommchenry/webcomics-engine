@@ -2,3 +2,12 @@ language: ruby
 
 services:
   - postgresql
+
+before_install:
+  - gem install bundler
+
+script:
+  — bundle install
+  — bundle exec rake db:create
+  — bundle exec rake db:migrate
+  — bundle exec rspec
