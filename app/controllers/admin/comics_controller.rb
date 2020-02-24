@@ -1,6 +1,6 @@
 class Admin::ComicsController < ApplicationController
-  before_filter :authorize
-  before_filter :publisher
+  before_action :authorize
+  before_action :publisher
 
   def index
     @search = Comic.search(params[:q])
