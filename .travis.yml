@@ -1,12 +1,12 @@
 language: ruby
-rvm:
- - 2.2
-# uncomment and edit the following line if your project needs to run
-# something other than `rake`:
-# # script: bundle exec rspec spec
 
 services:
   - postgresql
 
 before_script:
   - psql -c 'create database webcomics_test;' -U postgres
+
+before_install:
+  - gem update --system
+  - gem i rubygems-update -v '<3' && update_rubygems
+  - gem install bundler
